@@ -1,8 +1,10 @@
-const express = require("express");
-const app = express();
+const express = require("express")
+const app = express()
+const PORT = process.env.PORT || 3000
 
-const PORT = process.env.PORT || 3004;
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
-app.listen(PORT, () => {
-  console.log("This port is working");
-});
+app.listen(PORT, ()=>{
+    console.log("this port is turned on")
+})
